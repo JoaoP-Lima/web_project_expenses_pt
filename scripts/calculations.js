@@ -67,14 +67,15 @@ function calculateLargestCategory() {
   return largestCategory[0];
 }
 
-function addExpenseEntry(category, amount) {
-  const addCategory = category[0];
-  const amountNum = parseFloat(amount[1]);
+function addExpenseEntry(addCategory) {
+  const category = addCategory[0];
+  const amountNum = parseFloat(addCategory[1]);
 
   if (isNaN(amountNum) || amountNum <= 0) {
     return;
   }
-  expenseEntries.push([addCategory, amountNum]);
+
+  expenseEntries.push([category, amountNum]);
 
   totalExpensesValue += amountNum;
 }
